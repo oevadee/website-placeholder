@@ -1,7 +1,7 @@
-import * as React from "react";
-import type { HeadFC, PageProps } from "gatsby";
-import { IndexView } from "../views/index";
-import { Layout } from "../layouts";
+import * as React from 'react';
+import type { HeadFC, PageProps } from 'gatsby';
+import { IndexView } from '../views/index';
+import { Layout } from '../layouts';
 
 const IndexPage: React.FC<PageProps> = () => {
   return (

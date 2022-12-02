@@ -1,21 +1,38 @@
-import type { GatsbyConfig } from "gatsby";
+const path = require('path');
 
-const config: GatsbyConfig = {
+module.exports = {
   siteMetadata: {
-    title: `website-placeholder`,
-    siteUrl: `http://google.com`,
+    title: `My portfolio`,
+    description: `Showcase of developing static site`,
+    author: `@oevadee`,
   },
-  graphqlTypegen: true,
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-styled-components`,
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/',
+      },
+      __key: 'images',
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Lato'],
+        display: 'swap',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /assets/,
+          include: /assets/, // See below to configure properly
         },
       },
     },
   ],
 };
-
-export default config;

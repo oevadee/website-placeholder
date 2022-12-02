@@ -1,9 +1,9 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 * {
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     box-sizing: border-box;
     letter-spacing: 0;
     color: #BDEBEA;
@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
 }
 html {
-    background: #041F31;
+    background: #ffffff;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     overflow-x: hidden;
