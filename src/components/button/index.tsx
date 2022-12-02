@@ -3,13 +3,18 @@ import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
 const buttonStyles = css`
-  padding: 0.75rem 1.25rem;
-  background: ${({ theme }) => theme.colors.gradient};
-  color: ${({ theme }) => theme.colors.darkText};
-  border-radius: 0.375rem;
   width: fit-content;
-  font-weight: ${({ theme }) => theme.font.weight.medium};
+  min-height: 2.8125rem;
+  padding: 0.9rem 0;
+  background: ${({ theme }) => theme.colors.button};
+  color: ${({ theme }) => theme.colors.buttonText};
+  font-size: ${({ theme }) => theme.font.size.smaller};
+  font-weight: ${({ theme }) => theme.font.weight.bold};
+  letter-spacing: ${({ theme }) => theme.letterSpacing.narrow};
   cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 210px;
 `;
 
 const SLink = styled(Link)`
@@ -18,7 +23,11 @@ const SLink = styled(Link)`
 
 const SButton = styled.button`
   ${buttonStyles}
-  border: none;
+  border: ${({ theme }) => theme.border.button};
+  :hover {
+    background-color: ${({ theme }) => theme.colors.buttonHover};
+    color: ${({ theme }) => theme.colors.buttonTextHover};
+  }
 `;
 
 interface Props {
@@ -28,12 +37,7 @@ interface Props {
   className?: string;
 }
 
-export const StyledButton = ({
-  to,
-  children,
-  type = 'button',
-  className,
-}: Props) => {
+export const Button = ({ to, children, type = 'button', className }: Props) => {
   if (!to) {
     return (
       <SButton className={className} type={type}>

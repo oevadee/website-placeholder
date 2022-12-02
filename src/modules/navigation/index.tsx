@@ -7,6 +7,9 @@ import BagIcon from 'assets/bag.svg';
 
 const SNav = styled.nav`
   position: sticky;
+  top: 0;
+  z-index: ${({ theme }) => theme.zIndex.nav};
+  background-color: ${({ theme }) => theme.colors.nav};
   width: 100%;
   height: 100px;
   display: flex;

@@ -2,9 +2,14 @@ export const theme = {
   colors: {
     background: '#ffffff',
     navItem: '#000000',
+    nav: '#ffffff',
     inputText: '#7e8185',
     navItemHover: '#000000',
     navItemSpecial: '#18642f',
+    button: '#ffffff',
+    buttonHover: '#000000',
+    buttonText: '#776969',
+    buttonTextHover: '#ffffff',
     dark: '#041F31',
     gradient: 'linear-gradient(45deg, #00F5A0, #00D9F5);',
     white: '#D9F2F2',
@@ -19,7 +24,7 @@ export const theme = {
       smaller: '0.625rem',
       small: '0.75rem',
       medium: '1.125rem',
-      bigger: '1.25rem',
+      bigger: '1.75rem',
       biggest: '2.5rem',
       giant: '4.5rem',
     },
@@ -39,5 +44,12 @@ export const theme = {
   border: {
     search: '1px solid #bebebe',
     nav: '1px solid #000000',
+    button: '1px solid #776969',
+  },
+  letterSpacing: {
+    narrow: '.125rem',
+  },
+  zIndex: {
+    nav: 1000,
   },
 };

@@ -1,8 +1,8 @@
-import React, { ReactNode } from "react";
-import { Navigation } from "modules/navigation";
-import styled, { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "styles/GlobalStyles";
-import { theme } from "styles/theme";
+import React, { ReactNode } from 'react';
+import { Navigation } from 'modules/navigation';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from 'styles/GlobalStyles';
+import { theme } from 'styles/theme';
 // import { Footer } from "modules/footer";
 
 const SWrapper = styled.div`
@@ -14,9 +14,7 @@ const SWrapper = styled.div`
 
 const SMain = styled.main`
   width: 100%;
-  max-width: 1200px;
   min-height: calc(100vh - ${({ theme }) => theme.dimentions.nav});
-  padding: 0 11.75rem;
   @media (max-width: 678px) {
     padding: 0 2rem;
   }

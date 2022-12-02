@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
     letter-spacing: 0;
-    color: #BDEBEA;
+    color: #000000;
     margin: 0;
     padding: 0;
 }
