@@ -35,6 +35,9 @@ export const theme = {
       bold: '700',
     },
   },
+  lineHeight: {
+    small: '1.5rem',
+  },
   dimentions: {
     nav: '6.25rem',
     inputWidth: '12.5rem',
@@ -45,6 +48,7 @@ export const theme = {
     search: '1px solid #bebebe',
     nav: '1px solid #000000',
     button: '1px solid #776969',
+    card: '1px solid #d6dbe2;',
   },
   letterSpacing: {
     narrow: '.125rem',

@@ -1,6 +1,6 @@
 import { Button } from 'components/button';
 import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -9,37 +9,113 @@ const SWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: ${({ theme }) => theme.border.card};
+`;
+
+const SImage = styled(GatsbyImage)`
+  height: 374px;
+  width: 100%;
+`;
+
+const SBottomnWrapper = styled.div`
+  font-size: ${({ theme }) => theme.font.size.small};
+  line-height: ${({ theme }) => theme.lineHeight.small};
+  text-align: center;
+  box-sizing: content-box;
+  min-height: 10rem;
+  padding: 0.625rem;
+  position: relative;
+  word-break: break-all;
+  box-sizing: content-box;
+  min-height: 10rem;
+  padding: 0.625rem;
+  position: relative;
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    min-height: 11.25rem;
+    padding: 1.25rem 0.9375rem;
+  }
+`;
+
+const SHeading = styled.h5`
+  color: #000;
+  text-transform: uppercase;
+  word-break: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+`;
+
+const SDescription = styled.p`
+  color: #776969;
+  margin-top: 0.125rem;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (min-width: 1024px) {
+    margin-top: 0.3125rem;
+  } ;
+`;
+
+const SPrice = styled.p`
+  color: #776969;
+  margin-top: 0.125rem;
+  letter-spacing: 0;
+
+  @media (min-width: 1024px) {
+    margin-top: 0.3125rem;
+  }
+`;
+
+const SButton = styled(Button)`
+  position: absolute;
+  bottom: 0.75rem;
+  margin-top: auto;
+
+  @media (min-width: 1024px) {
+    bottom: 1.5625rem;
+  }
 `;
 
 interface Props {
   alt: string;
+  image: IGatsbyImageData;
+  title: string;
+  description: string;
+  price: string;
 }
 
-export const ProductCard: React.FC<Props> = ({ alt }) => {
-  const { file } = useStaticQuery(graphql`
-    query IntroBannerQuery {
-      file(relativePath: { eq: "intro-banner.webp" }) {
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
-    }
-  `);
-
-  const image = getImage(file);
-
-  if (!image) return <h1>No image found!</h1>;
-
+export const ProductCard: React.FC<Props> = ({
+  alt,
+  image,
+  title,
+  description,
+  price,
+}) => {
   return (
     <SWrapper>
-      <GatsbyImage
+      <SImage
         image={image}
         alt={alt}
         style={{
           gridArea: 1 / 1,
         }}
       />
-      <Button>Add to cart</Button>
+      <SBottomnWrapper>
+        <SHeading>{title}</SHeading>
+        <SDescription>{description}</SDescription>
+        <SPrice>{price}</SPrice>
+        <SButton>Add to cart</SButton>
+      </SBottomnWrapper>
     </SWrapper>
   );
 };

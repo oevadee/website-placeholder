@@ -9,23 +9,27 @@ const SWrapper = styled.div`
 `;
 
 export const Banner = () => {
-  const { file } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query IntroBannerQuery {
       file(relativePath: { eq: "intro-banner.webp" }) {
         childImageSharp {
-          gatsbyImageData
+          gatsbyImageData(
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+            layout: FULL_WIDTH
+          )
         }
       }
     }
   `);
 
-  const image = getImage(file);
+  const image = getImage(data?.file);
 
   if (!image) return <h1>No image found</h1>;
 
   return (
     <SWrapper>
-      <GatsbyImage style={{}} objectFit="contain" alt="" image={image} />
+      <GatsbyImage objectFit="contain" alt="" image={image} />
     </SWrapper>
   );
 };
