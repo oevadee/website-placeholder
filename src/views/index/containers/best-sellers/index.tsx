@@ -10,6 +10,7 @@ const SWrapper = styled.section`
   align-items: center;
   margin-left: 8%;
   width: 82%;
+  margin-bottom: 4rem;
 `;
 
 const Heading = styled.h2`
