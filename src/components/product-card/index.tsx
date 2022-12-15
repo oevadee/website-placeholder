@@ -20,12 +20,6 @@ const SBottomnWrapper = styled.div`
   font-size: ${({ theme }) => theme.font.size.small};
   line-height: ${({ theme }) => theme.lineHeight.small};
   text-align: center;
-  box-sizing: content-box;
-  min-height: 10rem;
-  padding: 0.625rem;
-  position: relative;
-  word-break: break-all;
-  box-sizing: content-box;
   min-height: 10rem;
   padding: 0.625rem;
   position: relative;
@@ -33,6 +27,7 @@ const SBottomnWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   @media (min-width: 1024px) {
     min-height: 11.25rem;
@@ -41,17 +36,14 @@ const SBottomnWrapper = styled.div`
 `;
 
 const SHeading = styled.h5`
-  color: #000;
+  color: ${({ theme }) => theme.colors.cardHeading};
   text-transform: uppercase;
   word-break: normal;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   overflow: hidden;
 `;
 
 const SDescription = styled.p`
-  color: #776969;
+  color: ${({ theme }) => theme.colors.cardInfo};
   margin-top: 0.125rem;
   text-transform: capitalize;
   letter-spacing: 0;
@@ -62,11 +54,11 @@ const SDescription = styled.p`
 
   @media (min-width: 1024px) {
     margin-top: 0.3125rem;
-  } ;
+  }
 `;
 
 const SPrice = styled.p`
-  color: #776969;
+  color: ${({ theme }) => theme.colors.cardInfo};
   margin-top: 0.125rem;
   letter-spacing: 0;
 
@@ -79,8 +71,10 @@ const SButton = styled(Button)`
   position: absolute;
   bottom: 0.75rem;
   margin-top: auto;
+  width: calc(100% - 1.25rem);
 
   @media (min-width: 1024px) {
+    width: calc(100% - 1.875rem);
     bottom: 1.5625rem;
   }
 `;

@@ -1,8 +1,8 @@
-import { ProductCard } from 'components/product-card';
-import { graphql, useStaticQuery } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import { ProductCard } from 'components/product-card';
 
 const SWrapper = styled.section`
   display: flex;
@@ -21,6 +21,7 @@ const Heading = styled.h2`
 `;
 
 const SProductsCarousel = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 1.875rem;

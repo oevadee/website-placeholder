@@ -19,6 +19,8 @@ export const theme = {
     placeholderText: '#919b9b',
     breadCrumbsText: '#7e8185',
     info: '#8b8e92',
+    cardHeading: '#000000',
+    cardInfo: '#776969',
     red: '#C05353',
   },
   font: {
