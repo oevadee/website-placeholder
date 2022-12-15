@@ -17,6 +17,8 @@ export const theme = {
     powderBlue: '#BDEBEA',
     darkText: '#1F2626',
     placeholderText: '#919b9b',
+    breadCrumbsText: '#7e8185',
+    info: '#8b8e92',
     red: '#C05353',
   },
   font: {
@@ -33,6 +35,9 @@ export const theme = {
       medium: '500',
       semibold: '600',
       bold: '700',
+    },
+    family: {
+      notoSansJapanese: `'Noto Sans JP', sans-serif`,
     },
   },
   lineHeight: {
