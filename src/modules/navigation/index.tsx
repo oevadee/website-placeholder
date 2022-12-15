@@ -16,10 +16,11 @@ const SNav = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem 0 2.5rem;
+  border-bottom: ${({ theme }) => theme.border.nav};
+
   @media (max-width: 768px) {
     padding: 0 2rem;
   }
-  border-bottom: ${({ theme }) => theme.border.nav};
 `;
 
 const SLogoNavWrapper = styled.div`
@@ -35,6 +36,7 @@ const SList = styled.ul`
   align-items: center;
   gap: 1.25rem;
   list-style: none;
+
   @media (max-width: 768px) {
     gap: 2rem;
   }

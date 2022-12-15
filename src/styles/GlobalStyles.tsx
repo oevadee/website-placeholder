@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 * {
-    font-size: 16px;
-    font-family: 'Lato', sans-serif;
     box-sizing: border-box;
     letter-spacing: 0;
     color: #000000;
@@ -11,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
 }
 html {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
     background: #ffffff;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;

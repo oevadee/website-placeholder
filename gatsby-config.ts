@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Lato'],
+        fonts: ['Lato', 'Noto Sans Japanese/:300,400,500,700'],
         display: 'swap',
       },
     },
