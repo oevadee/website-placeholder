@@ -20,11 +20,15 @@ const SHeader = styled.h6`
   text-transform: uppercase;
 `;
 
-export const ResultList = () => {
+interface Props {
+  what: string;
+}
+
+export const ResultList: React.FC<Props> = ({ what }) => {
   return (
     <SWrapper>
       <SResultsAmount>100 SEARCH RESULTS FOR</SResultsAmount>
-      <SHeader>AD</SHeader>
+      <SHeader>{what}</SHeader>
       ...products
     </SWrapper>
   );
