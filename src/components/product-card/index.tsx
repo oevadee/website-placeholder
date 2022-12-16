@@ -50,7 +50,6 @@ const SDescription = styled.p`
   line-height: 1.5;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 
   @media (min-width: 1024px) {
     margin-top: 0.3125rem;

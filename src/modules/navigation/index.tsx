@@ -2,8 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Logo from 'assets/logo.svg';
-import { SearchInput } from 'components/search-input';
-import BagIcon from 'assets/bag.svg';
+import { NavSearch } from './containers/nav-search';
 
 const SNav = styled.nav`
   position: sticky;
@@ -56,17 +55,6 @@ const ListItem = styled.li<{ isActive?: boolean; isSpecial?: boolean }>`
   }
 `;
 
-const SSearchBagWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const SBagIcon = styled(BagIcon)`
-  height: 1.5rem;
-  margin-left: 1.25rem;
-  cursor: pointer;
-`;
-
 export const Navigation = () => {
   return (
     <SNav>
@@ -89,10 +77,7 @@ export const Navigation = () => {
           </ListItem>
         </SList>
       </SLogoNavWrapper>
-      <SSearchBagWrapper>
-        <SearchInput />
-        <SBagIcon />
-      </SSearchBagWrapper>
+      <NavSearch />
     </SNav>
   );
 };

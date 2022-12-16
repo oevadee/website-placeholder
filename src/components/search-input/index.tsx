@@ -1,8 +1,10 @@
 import React from 'react';
 import SearchIcon from 'assets/search.svg';
 import styled from 'styled-components';
+import { UseFormRegister } from 'react-hook-form';
+import { NavSearchInput } from 'modules/navigation/containers/nav-search';
 
-const SForm = styled.form`
+const SWrapper = styled.div`
   width: ${({ theme }) => theme.dimentions.inputWidth};
   color: ${({ theme }) => theme.colors.inputText};
   display: flex;
@@ -42,15 +44,17 @@ const SInput = styled.input`
 
 interface Props {
   placeholder?: string;
+  register: UseFormRegister<NavSearchInput>;
 }
 
 export const SearchInput: React.FC<Props> = ({
   placeholder = 'Insert text here',
+  register,
 }) => {
   return (
-    <SForm>
+    <SWrapper>
       <SSearchIcon />
-      <SInput type="search" placeholder={placeholder} />
-    </SForm>
+      <SInput type="search" placeholder={placeholder} {...register('what')} />
+    </SWrapper>
   );
 };
